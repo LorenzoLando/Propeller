@@ -8,8 +8,8 @@
 	margin: 15px 0;
 	-webkit-box-shadow: 4px 10px 10px -4px rgba(0,0,0,0.75);
 	-moz-box-shadow: 4px 10px 10px -4px rgba(0,0,0,0.75);
-	box-shadow: 4px 10px 10px -4px rgba(0,0,0,0.75); 
-	
+	box-shadow: 4px 10px 10px -4px rgba(0,0,0,0.75);
+
 	&__title {
 		display: flex;
 		flex-direction: row;
@@ -21,17 +21,14 @@
 
 .section--selected {
 	background-color: $selectedColor;
-	margin: 0;
+
 }
 
-.provvisorio {
-	height: 150px;
+.sezione-testo {
+	height: 120px;
 	margin: 0;
 	padding: 0;
 	border-left: 1px solid #EBEBEB;
 	border-bottom: 1px solid #EBEBEB;
 	border-right: 1px solid #EBEBEB;
 }
-
-
-

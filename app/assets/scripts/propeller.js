@@ -5,66 +5,41 @@ $.ajax
   dataType: 'json',
   async: false,
   headers: {
-    
-  },
+},
+
   data: '{ "comment" }',
   success: function (data){
-    
-   
-   myObject = data.blocks;
+    myObject = data.blocks;
   }
 });
 
+var testo1 = myObject[0].content;
+var testo2 = myObject[1].content;
+var testo3 = myObject[2].content;
 
-console.log(myObject);
 
 
+
+$('section').slideUp();
+//animazione
 //quando clicco su una sezione
 $(".section").click(function(){
-	$(this).toggleClass("section--selected");
+  //
+    $(".section").removeClass("section--selected");
+    $('span').removeClass("fa-angle-up").addClass("fa-angle-down");
+    $('section').slideUp();
+    //la sezione viene evidenziata
+    $(this).addClass("section--selected");
+    $(this).find('span').removeClass("fa-angle-down").addClass("fa-angle-up");
+    $(this).next().slideDown();
+    $(this).next().slideDown();
+    //attacca testo01 a tutte le sezioni
+    if($(this).hasClass("1")) {
+      $(".info").text(testo1);
+    } else if ($(this).hasClass("2")) {
+      $(".info").text(testo2);
+    } else if ($(this).hasClass("3")) {
+      $(".info").text(testo3);
+    }
+
 });
-//mostra la sezione di testo corrispondente
-//riprendi il testo dall`oggetto
-//
-
-
-
-
-
-
-
-
-
-//display pe far vedere i dati
-
-// function renderHTML(data) {
-//    var htmlString  = "";
-//     for(i = 0; i < data.length; i++) {
-//     htmlString += "<p>" + data[i].AltName+ " telephone number is: "; ;
-//     htmlString += data[i].PhoneNumber + " is located in ";
-//     htmlString +=  data[i].Town + " and the Postcode is ";
-//     htmlString +=  data[i].PostCode + ".</p>";
-
-//   }
-
-//   $("#info").append(htmlString);
-
-// }
-
-
-
-
-
-//il risultato sembra essere un oggetto guarda come fare ad accedere a tutte le propieta`
-
-// $("#btn").on("click", function(){
-//     renderHTML(myObject);
-//     $(this).addClass("hide-me");
-    
-
-//   });
-
-
-
-
-
